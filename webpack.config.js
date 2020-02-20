@@ -81,7 +81,7 @@ const renderPlugins = [
   new webpack.ProvidePlugin({React: 'react'}),
 ]
 if (mode === 'production') {
-  renderPlugins.push(new BundleAnalyzerPlugin())
+  renderPlugins.push(new BundleAnalyzerPlugin({analyzerMode: 'static'}))
 }
 const renderer = Object.assign({}, base, {
   target: 'electron-renderer',
